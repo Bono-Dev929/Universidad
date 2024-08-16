@@ -1,0 +1,67 @@
+Se busca resolver un enunciado mediante el paradigmamde objetos
+OBJETO = elemento de la realidad,
+Se le pone una especificidad aal objeto y funcionalidades especificas
+
+se trabaja con CLASES las cuales serian como plantillas para crear
+objetos, es decir instanciar un ojeto a partir de una clase,
+
+Ej: apartir de una clase "Persona" puedo crear una instancia de una Persona
+la cual posee atributos con un valor propio
+
+El nombre de la clase siempre se escribew con mayuscula
+Encapsulamiento hace referencia a que solo un objeto puede conocer
+su estado interno, es decir sus valores
+
+el simbolo "-" representa que una propiedad Privada solo accesible
+para el ojeto
+y el simbolo "+" quiere decir que esta publico para otros objetos
+
+para poder hacer que un ojeto se comunique con otro deehaber METODOS 
+que sean publicos
+
+JAVA:
+
+hay 2 tipos de datos:
+    -Primitivo: -> estos son los creados por defecto por el lenguaje
+    -Clase: -> estos son mas complejos los cuales son plantillas para un tipos
+        de dato especifico
+
+Todas las clases tienen una forma de compartir su estado interno: GET Y SET
+
+Get es un metodo que devuelve el valor en cuestion, solo lo muestra
+SET es un metodo que modifica el valor en cuestion
+
+El CONSTRUCTOR se usa una sola vez ya que lo que hace es guardar un pedacito en memoria 
+asi que no es necesario guardar lo mismo 2 veces
+
+IDE: el IDE posee una funcion para crear lso getters y los setters, y tambien el constructor
+
+por fuera de la clase hay que crear una clase TEST enla cual vamos a probar todo
+
+para instanciar una clase se crea asi:
+    <NombreDeClase> nombreobjeto = new <NombreClase>(Parametros);
+
+para acceder a sus metodos se usa el punto, metodos como los getters y el constructor
+
+todos los metodos se componen de una firma la cual se compone de:
+VISIVILIDAD RETORNO NOMBRE(PARAMETROS).
+y dentro de llaves{} se escribe su codigo guente
+
+simpre que se use un atributo dentro de una clase no es necesario usar get o set
+
+objetivo: ver y leer el diagrama de clases y entenderlo para crearlo
+desarrollar los metodos y mejorarlos evaluando a que clase pertenecen
+TESTEAR todo
+
+------------------------------------------
+1 ubicar entidades de la realidad y crear objetos
+2
+3una clase es una plantilla que representa un objeto real
+4 tes es ejecutable y las otras no
+5 un ATRIBUTO REPRESENTA ESTADO interno
+6visibilidad de atrivbutos : privado
+7se accede atravez de getters
+8para instanciar objetos
+9para desambiaguar nombres iguales
+10para modificar datos de objetos creados
+11 caso de uso son requerimientos del objeto
