@@ -11,11 +11,12 @@ public class Paciente {
 	private float peso;
 	
 	//seccion del Constructor
-	public Paciente(String nombre, String apellido, float estatura, float peso) {// atravez de este metodo creamos un objeto especifico
+	public Paciente(String nombre, String apellido,int edad, float estatura, float peso) {// atravez de este metodo creamos un objeto especifico
 		this.apellido = apellido;
 		this.nombre =nombre;
 		this.estatura = estatura;
 		this.peso = peso;
+		this.edad = edad;
 		
 	}///termina la seccion del constructor
 	
@@ -48,6 +49,12 @@ public class Paciente {
 
 	public void setApellido(String apellido) {
 		this.apellido = apellido;
+	}
+	public int getEdad(){
+		return edad;
+	}
+	public void setEdad(int newEdad){
+		edad = newEdad;
 	}
 
 	public float getEstatura() {
