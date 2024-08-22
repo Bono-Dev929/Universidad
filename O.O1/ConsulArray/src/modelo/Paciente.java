@@ -72,7 +72,7 @@ public class Paciente {
 	
 	@Override
 	public String toString() {
-		return "[Paciente: "+this.traerNombreCompleto()+", Peso: "+this.peso+", Estatura: "+this.estatura+"]\n";
+		return "[Nombre: "+ nombre +", Apellido: "+ apellido +"Peso: "+this.peso+", Estatura: "+this.estatura+"]\n";
 	}
 	
 	public boolean equals(Paciente p) {
