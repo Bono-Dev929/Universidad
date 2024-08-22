@@ -70,12 +70,4 @@ public class Paciente {
 		this.nombre = nombre;
 	}
 	
-	@Override
-	public String toString() {
-		return "[Paciente: "+this.traerNombreCompleto()+", Peso: "+this.peso+", Estatura: "+this.estatura+"]";
-	}
-	
-	
-	
-	
 }
