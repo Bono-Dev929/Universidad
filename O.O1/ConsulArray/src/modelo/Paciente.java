@@ -7,13 +7,15 @@ public class Paciente {
 	//atributos 
 	private String nombre;//los atributos se declaran privados
 	private String apellido;
+	private int edad;
 	private float estatura;
 	private float peso;
 	
 	//seccion del Constructor
-	public Paciente(String nombre, String apellido, float estatura, float peso) {// atravez de este metodo creamos un objeto especifico
+	public Paciente(String nombre, String apellido,int edad, float estatura, float peso) {// atravez de este metodo creamos un objeto especifico
 		this.apellido = apellido;
 		this.nombre =nombre;
+		this.edad = edad;
 		this.estatura = estatura;
 		this.peso = peso;
 		
@@ -38,16 +40,25 @@ public class Paciente {
 	public String getNombre(){
 		return this.nombre;
 	}
-	public void setAltura(float estatura) {
-		this.estatura= estatura;
-	}
 
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+	
 	public String getApellido() {
 		return apellido;
 	}
 
 	public void setApellido(String apellido) {
 		this.apellido = apellido;
+	}
+
+	public int getEdad(){
+		return edad
+	}
+
+	public void setEdad(int newEdad){
+		edad = newEdad;
 	}
 
 	public float getEstatura() {
@@ -66,17 +77,15 @@ public class Paciente {
 		this.peso = peso;
 	}
 
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
-	}
+	
 	
 	@Override
 	public String toString() {
-		return "[Nombre: "+ nombre +", Apellido: "+ apellido +"Peso: "+this.peso+", Estatura: "+this.estatura+"]\n";
+		return "[Nombre: "+ nombre +", Apellido: "+ apellido +", Edad: "+edad+", Peso: "+this.peso+", Estatura: "+this.estatura+"]\n";
 	}
 	
 	public boolean equals(Paciente p) {
-		return (nombre == p.getNombre() && apellido == p.getApellido() && peso == p.getPeso() && estatura == p.getEstatura());
+		return (nombre.equals(p.getNombre()) && apellido.equals(p.getApellido())&& edad == p.getEdad() && peso == p.getPeso() && estatura == p.getEstatura());
 	}
 	
 	
