@@ -12,7 +12,7 @@ public class ItemCarrito {
 		super();
 		this.idItem = idItem;
 		this.producto = producto;
-		this.cantidad = cantidad;
+		setCantidad(cantidad);
 	}
 	
 	//metodos
@@ -38,6 +38,7 @@ public class ItemCarrito {
 		return cantidad;
 	}
 	public void setCantidad(int cantidad) {
+		if(cantidad <=0)throw new Exception("Cantidad no puede ser menor a cero");
 		this.cantidad = cantidad;
 	}
 	
