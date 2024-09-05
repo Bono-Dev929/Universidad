@@ -17,25 +17,25 @@ public class Incaa {
 	}
 	
 	//metodos
-	public boolean agregarPelicula(String p,Genero g) {
-		Pelicula peli = new Pelicula(0, p, g);
+	public boolean agregarPelicula(String p,Genero g) {//mejorar y modificar
+		Pelicula peli = new Pelicula(0, p, g);//
 		boolean existe = false,agregada = false;
 		int i = 0;
 		
-		while(i < catalogo.size()) {
+		while(i < catalogo.size()) {//
 			if (catalogo.get(i).getPelicula().equals(p)) {
-				i = catalogo.size();
+				i = catalogo.size();//
 				existe = true;
 			}
 			i += 1;
 		}
 		//si es false = true y si es true = false
 		if (!existe) {
-			if (catalogo.size() == 0) {
-				catalogo.add(peli);
+			if (catalogo.size() == 0) {//
+				catalogo.add(peli);//
 			}else {
-				peli.setIdPelicula(catalogo.get(catalogo.size()-1).getIdPelicula()+1);
-				catalogo.add(peli);
+				peli.setIdPelicula(catalogo.get(catalogo.size()-1).getIdPelicula()+1);//
+				catalogo.add(peli);//
 			}
 			agregada = true;
 		}
