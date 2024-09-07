@@ -15,20 +15,19 @@ public class Supermercado {
 	
 	public boolean agregarProducto(String prod, float precio) throws Exception {
 		
-		Producto p = new Producto(0, prod, precio);
+		int id = 1;
 		
-		for (int i = 0; i <gondola.size(); i++) {
-			if(gondola.get(i).getProducto().equals(prod) && gondola.get(i).getPrecio() == precio) {
-				throw new Exception("El producto "+prod+" de Precio "+precio+" ya existe en la gondola");
-			}
-		}
+		for (Producto producto : gondola) 
+			if(producto.getProducto().equals(prod))
+				throw new Exception("El producto "+prod+" ya existe en la gondola");
+			
 		
-		if(gondola.size() ==0) {
-			gondola.add(p);
-		}else {
-			p.setIdProducto(gondola.get(gondola.size()-1).getIdProducto()+1);
-			gondola.add(p);	
-		}
+		
+		if(gondola.size() !=0) 
+			id = gondola.get(gondola.size()-1).getIdProducto()+1;	
+		
+		Producto p = new Producto(id, prod, precio);
+		gondola.add(p);
 		
 		return true;
 	}
