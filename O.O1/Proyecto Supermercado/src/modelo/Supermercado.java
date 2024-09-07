@@ -36,10 +36,9 @@ public class Supermercado {
 		Producto p = null;
 		int i=0;
 		
-		while(i<gondola.size()) {
+		while(i<gondola.size() && p == null) {
 			if (gondola.get(i).getIdProducto() == idProducto) {
 				p = gondola.get(i);
-				i = gondola.size();
 			}
 			i+=1;
 		}
