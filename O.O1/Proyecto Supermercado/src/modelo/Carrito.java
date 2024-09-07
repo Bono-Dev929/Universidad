@@ -26,29 +26,23 @@ public class Carrito {
 	
 	public boolean agregarItem(Producto p, int c) throws Exception {
 		
-		ItemCarrito item = new ItemCarrito(0, p, c);
 		boolean v = false;
-		int i = 0;
+		int i = 0, id = 1;
 		
-		if(c<1) {
-			throw new Exception("Cantidad nula, el producto "+p.getProducto()+" no se agrega.");
-		}
-		
-		if(listItem.size() == 0) {
-			listItem.add(item);
-			v = true;
-		}else {
-			while (i < listItem.size()) {
-				if(listItem.get(i).getProducto().equals(p)) {
-					listItem.get(i).setCantidad(listItem.get(i).getCantidad()+c);
-					v = true;
-					i = listItem.size();//break;
-				}
-				i+=1;
+		//refactorear todo esto//LISTO
+		while (!v && i<listItem.size()) {
+			if(listItem.get(i).getProducto().equals(p)) {
+				listItem.get(i).setCantidad(listItem.get(i).getCantidad()+c);
+				v = true;
 			}
+			i++;
 		}
+		
 		if (!v) {
-			item.setIdItem(listItem.get(listItem.size()-1).getIdItem()+1);
+			if(listItem.size() != 0) {
+				id = listItem.get(listItem.size()-1).getIdItem()+1;
+			}
+			ItemCarrito item = new ItemCarrito(id, p, c);
 			listItem.add(item);
 		}
 		
