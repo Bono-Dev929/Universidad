@@ -62,7 +62,11 @@ public class Supermercado {
 	
 	public boolean eliminarProducto(int id) {
 		
+		if (traerProducto(id) == null) {
+			throw new Exception("El producto que quiere modificar no existe");
+		}
 		
+		gondola.remove(id);
 		
 		return true;
 	}
