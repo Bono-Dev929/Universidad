@@ -1,7 +1,5 @@
 package modelo;
 
-import java.util.Objects;
-
 public class Cliente {
 
 	//Atributos
@@ -55,17 +53,8 @@ public class Cliente {
 				+ "]\n";
 	}
 	
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		Cliente other = (Cliente) obj;
-		return Objects.equals(cliente, other.cliente) && Objects.equals(direccion, other.direccion) && dni == other.dni
-				&& idCliente == other.idCliente;
+	public boolean equals(Cliente c) {
+		return dni == c.getDni();
 	}
 	
 	
