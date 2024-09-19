@@ -25,55 +25,45 @@ public class Carrito {
 	}
 
 	//Metodos
-	
 	public boolean agregarItem(Producto p, int c) throws Exception {
 		
+		int id = 1;
 		
-		boolean v = false;
-		int i = 0, id = 1;
-		
-		//refactorear todo esto//LISTO
-		while (!v && i<listItem.size()) {
-			if(listItem.get(i).getProducto().equals(p)) {
-				listItem.get(i).setCantidad(listItem.get(i).getCantidad()+c);
-				v = true;
-			}
-			i++;
-		}
-		
-		if (!v) {
-			if(listItem.size() != 0) {
+		if (traerItemProducto(p) == null) {
+			if(!listItem.isEmpty())
 				id = listItem.get(listItem.size()-1).getIdItem()+1;
-			}
 			ItemCarrito item = new ItemCarrito(id, p, c);
 			listItem.add(item);
+		}else {
+			traerItemProducto(p).setCantidad(traerItemProducto(p).getCantidad()+c);
 		}
 		
 		return true;
 	}
+
+	public ItemCarrito traerItemProducto(Producto p) {
+		
+		int i =0;
+		ItemCarrito item = null;
+		
+		while(i < listItem.size() && item == null) {
+			if(listItem.get(i).getProducto().equals(p))
+				item = listItem.get(i);
+			i++;
+		}
+		
+		return item;
+	}
 	
 	public boolean eliminarItem(Producto p, int c) throws Exception {
-		
-		int i=0, j = -1;
-		
-		while (i<listItem.size()) {
-			if (listItem.get(i).getProducto().equals(p)) {
-				j=i;
-				i=listItem.size();
-			}
-			i+=1;
-		}
-		
-		if(j<0) {
+			
+		if(traerItemProducto(p) == null) 
 			throw new Exception("No se encontro el Producto: "+p.getProducto());
-		}
 		
-		if(c>= listItem.get(j).getCantidad()) {
-			listItem.remove(j);
-		}else {
-			listItem.get(j).setCantidad(listItem.get(j).getCantidad()-c);
-		}
-		
+		if(c>= traerItemProducto(p).getCantidad()) 
+			listItem.remove(traerItemProducto(p));
+		else 
+			traerItemProducto(p).setCantidad(traerItemProducto(p).getCantidad()-c);
 		
 		return true;
 	}
