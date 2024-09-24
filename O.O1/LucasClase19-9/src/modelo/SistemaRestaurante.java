@@ -92,7 +92,17 @@ public class SistemaRestaurante {
 		return lstReservas.add(new Reserva(id, c, fecha, mesa, cantComensales));
 	}
 	
+	//traer reservas entre fechas
+
 	
+        //traer mesas disponible para una fecha
+	public List<Mesa> traerMesasParaFecha(LocalDate fecha){
+		List<Mesa> lstaux= new ArrayList<Mesa>();
+		for(Mesa m : lstMesas)
+			if(traerReserva(m.getNrMesa(),fecha == null)
+                             lstaux.add(m);
+        return lstaux;
+	}
 	
 	//accesores
 	public List<Cliente> getLstClientes() {
